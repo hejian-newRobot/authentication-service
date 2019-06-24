@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: service-auth
+ibatis:
+  typeAliasesPackage: com.learn.*.po
+  mapper:
+    locations:
+      test: classpath:mapper/test/*.xml
+
+datasource:
+    name: test
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    jdbc-url: jdbc:sqlserver://192.168.3.118:1433;DatabaseName=test
+    username: sa
+    password: hejian.1
+
+server:
+  port: 9098
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+#logging.level.org.springframework.security: DEBUG
+
