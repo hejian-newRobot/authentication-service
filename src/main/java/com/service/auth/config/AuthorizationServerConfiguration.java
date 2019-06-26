@@ -1,4 +1,4 @@
-package com.service.auth.serviceauth.config;
+package com.service.auth.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

@@ -1,4 +1,4 @@
-package com.service.auth.serviceauth.dto;
+package com.service.auth.dao;
 
 /**
  * 项目名称：SimpleSpringCloudGateway
@@ -14,7 +14,7 @@ package com.service.auth.serviceauth.dto;
  */
 
 
-import com.service.auth.serviceauth.entity.User;
+import com.service.auth.entity.User;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;

@@ -1,6 +1,6 @@
-package com.service.auth.serviceauth.config;
+package com.service.auth.config;
 
-import com.service.auth.serviceauth.util.StringUtil;
+import com.service.auth.util.StringUtil;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
@@ -38,7 +38,7 @@ public class MybatisConfig {
 
     private static String typeAliasesPackage;
 
-    private static final String TYPE_ALIASES_PACKAGE_BACKUP = "com.service.auth.serviceauth.entity";
+    private static final String TYPE_ALIASES_PACKAGE_BACKUP = "com.service.auth.entity";
 
     @Autowired
     public MybatisConfig(Environment env) {

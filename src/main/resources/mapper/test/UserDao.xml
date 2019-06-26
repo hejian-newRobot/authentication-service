@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?><!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.service.auth.serviceauth.dto.UserDao">
+<mapper namespace="com.service.auth.dao.UserDao">
 
-    <insert id="save" parameterType="com.service.auth.serviceauth.entity.User">
+    <insert id="save" parameterType="com.service.auth.entity.User">
         INSERT INTO users(userName,passWord,roles) VALUES(#{user.userName},#{user.passWord},#{user.roles})
     </insert>
     <delete id="deleteAll">
@@ -10,7 +10,7 @@
     </delete>
 
     <select id="findByUserName" parameterType="string"
-        resultType="com.service.auth.serviceauth.entity.User">
+        resultType="com.service.auth.entity.User">
         SELECT * FROM users WHERE userName=#{userName}
     </select>
 </mapper>

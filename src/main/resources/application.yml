@@ -10,7 +10,7 @@ ibatis:
 datasource:
     name: test
     driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
-    jdbc-url: jdbc:sqlserver://192.168.3.118:1433;DatabaseName=test
+    jdbc-url: jdbc:sqlserver://192.168.3.117:1433;DatabaseName=test
     username: sa
     password: hejian.1
 

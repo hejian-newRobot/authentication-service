@@ -1,6 +1,7 @@
-package com.service.auth.serviceauth.dto;
+package com.service.auth.service;
 
-import com.service.auth.serviceauth.entity.User;
+import com.service.auth.dao.UserDao;
+import com.service.auth.entity.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.AuthorityUtils;
@@ -10,12 +11,12 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserServiceDetail  implements UserDetailsService {
+public class UserDetailService implements UserDetailsService {
 
     private final UserDao userRepository;
 
     @Autowired
-    public UserServiceDetail(UserDao userRepository) {
+    public UserDetailService(UserDao userRepository) {
         this.userRepository = userRepository;
     }
 

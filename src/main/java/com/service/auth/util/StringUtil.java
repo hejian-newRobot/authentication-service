@@ -1,4 +1,4 @@
-package com.service.auth.serviceauth.util;
+package com.service.auth.util;
 
 import java.util.Arrays;
 

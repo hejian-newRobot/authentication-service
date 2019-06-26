@@ -1,4 +1,4 @@
-package com.service.auth.serviceauth.entity;
+package com.service.auth.entity;
 
 /**
  * 项目名称：SimpleSpringCloudGateway

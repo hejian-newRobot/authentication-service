@@ -1,4 +1,4 @@
-package com.service.auth.serviceauth.config;
+package com.service.auth.config;
 
 import com.zaxxer.hikari.HikariDataSource;
 
@@ -26,7 +26,7 @@ import javax.sql.DataSource;
  * @author hejian
  */
 @Configuration
-@MapperScan(basePackages = "com.service.auth.serviceauth.dto", sqlSessionTemplateRef = "testDBSqlSessionTemplate")
+@MapperScan(basePackages = "com.service.auth.serviceauth.dao", sqlSessionTemplateRef = "testDBSqlSessionTemplate")
 public class DataSourceConfigForTest {
 
     @Value("${ibatis.mapper.locations.test}")

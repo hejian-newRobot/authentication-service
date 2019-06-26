@@ -1,4 +1,4 @@
-package com.service.auth.serviceauth;
+package com.service.auth;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

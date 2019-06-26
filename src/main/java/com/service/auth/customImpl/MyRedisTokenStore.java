@@ -1,4 +1,4 @@
-package com.service.auth.serviceauth.customImpl;
+package com.service.auth.customImpl;
 
 import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.connection.RedisConnectionFactory;

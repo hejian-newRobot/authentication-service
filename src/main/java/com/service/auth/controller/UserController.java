@@ -1,4 +1,4 @@
-package com.service.auth.serviceauth.controller;
+package com.service.auth.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
