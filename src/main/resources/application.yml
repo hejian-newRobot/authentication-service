@@ -1,6 +1,20 @@
 spring:
   application:
     name: service-auth
+  # redis configuration
+  redis:
+    host: 127.0.0.1
+    lettuce:
+      pool:
+        max-active: 7
+        max-idle: 7
+        max-wait: -1ms
+        min-idle: 2
+      shutdown-timeout: 200
+    password: hejian.1
+    port: 6379
+    timeout: 5000
+    database: 0
 ibatis:
   typeAliasesPackage: com.learn.*.po
   mapper:
@@ -8,11 +22,11 @@ ibatis:
       test: classpath:mapper/test/*.xml
 
 datasource:
-    name: test
-    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
-    jdbc-url: jdbc:sqlserver://192.168.3.117:1433;DatabaseName=test
-    username: sa
-    password: hejian.1
+  name: fsAppByCatering
+  driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jdbc-url: jdbc:sqlserver://47.111.168.225:8899;DatabaseName=fsAppByCatering
+  username: fstest
+  password: Fsgf@2017
 
 server:
   port: 9098
@@ -21,5 +35,5 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka/
 
-#logging.level.org.springframework.security: DEBUG
+    #logging.level.org.springframework.security: DEBUG
 

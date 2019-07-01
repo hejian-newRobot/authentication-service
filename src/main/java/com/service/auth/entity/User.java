@@ -1,35 +1,54 @@
 package com.service.auth.entity;
 
 /**
- * 项目名称：SimpleSpringCloudGateway
- * 包名称:com.learn.user.po
- * 类描述：
- * 创建人：hejian
- * 创建时间：2019/6/20 10:13
- * 修改人：hejian
- * 修改时间：2019/6/20 10:13
- * 修改备注：
- *
- * @author hejian
- */
-
-/**
- * 账户实体类
+ * 用户信息表
  */
 public class User {
 
-    private String id;          // 主键
-    private String userName;    // 用户名
-    private String passWord;    // 密码
-    private String roles;     // 角色
+    private long id;
+    private String jobId;
+    private String psd;
+    private String userName;
+    private String tPhone;
+    private String userStatus;
+    private long userTypeIdBySysD;
+    private long sexIdBySysD;
+    private java.sql.Timestamp dateOnBoard;
+    private java.sql.Timestamp termDate;
+    private java.sql.Timestamp healthCertificateStartDate;
+    private java.sql.Timestamp healthCertificateEndDate;
+    private String headPicUrl;
+    private String inTheAddress;
+    private String contacts;
+    private String contactsPhone;
 
-    public String getId() {
+
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
+
+
+    public String getJobId() {
+        return jobId;
+    }
+
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
+    }
+
+
+    public String getPsd() {
+        return psd;
+    }
+
+    public void setPsd(String psd) {
+        this.psd = psd;
+    }
+
 
     public String getUserName() {
         return userName;
@@ -39,19 +58,112 @@ public class User {
         this.userName = userName;
     }
 
-    public String getPassWord() {
-        return passWord;
+
+    public String getTPhone() {
+        return tPhone;
     }
 
-    public void setPassWord(String passWord) {
-        this.passWord = passWord;
+    public void setTPhone(String tPhone) {
+        this.tPhone = tPhone;
     }
 
-    public String getRoles() {
-        return roles;
+
+    public String getUserStatus() {
+        return userStatus;
     }
 
-    public void setRoles(String roles) {
-        this.roles = roles;
+    public void setUserStatus(String userStatus) {
+        this.userStatus = userStatus;
     }
+
+
+    public long getUserTypeIdBySysD() {
+        return userTypeIdBySysD;
+    }
+
+    public void setUserTypeIdBySysD(long userTypeIdBySysD) {
+        this.userTypeIdBySysD = userTypeIdBySysD;
+    }
+
+
+    public long getSexIdBySysD() {
+        return sexIdBySysD;
+    }
+
+    public void setSexIdBySysD(long sexIdBySysD) {
+        this.sexIdBySysD = sexIdBySysD;
+    }
+
+
+    public java.sql.Timestamp getDateOnBoard() {
+        return dateOnBoard;
+    }
+
+    public void setDateOnBoard(java.sql.Timestamp dateOnBoard) {
+        this.dateOnBoard = dateOnBoard;
+    }
+
+
+    public java.sql.Timestamp getTermDate() {
+        return termDate;
+    }
+
+    public void setTermDate(java.sql.Timestamp termDate) {
+        this.termDate = termDate;
+    }
+
+
+    public java.sql.Timestamp getHealthCertificateStartDate() {
+        return healthCertificateStartDate;
+    }
+
+    public void setHealthCertificateStartDate(java.sql.Timestamp healthCertificateStartDate) {
+        this.healthCertificateStartDate = healthCertificateStartDate;
+    }
+
+
+    public java.sql.Timestamp getHealthCertificateEndDate() {
+        return healthCertificateEndDate;
+    }
+
+    public void setHealthCertificateEndDate(java.sql.Timestamp healthCertificateEndDate) {
+        this.healthCertificateEndDate = healthCertificateEndDate;
+    }
+
+
+    public String getHeadPicUrl() {
+        return headPicUrl;
+    }
+
+    public void setHeadPicUrl(String headPicUrl) {
+        this.headPicUrl = headPicUrl;
+    }
+
+
+    public String getInTheAddress() {
+        return inTheAddress;
+    }
+
+    public void setInTheAddress(String inTheAddress) {
+        this.inTheAddress = inTheAddress;
+    }
+
+
+    public String getContacts() {
+        return contacts;
+    }
+
+    public void setContacts(String contacts) {
+        this.contacts = contacts;
+    }
+
+
+    public String getContactsPhone() {
+        return contactsPhone;
+    }
+
+    public void setContactsPhone(String contactsPhone) {
+        this.contactsPhone = contactsPhone;
+    }
+
 }

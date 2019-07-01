@@ -14,6 +14,7 @@ package com.service.auth.dao;
  */
 
 
+import com.service.auth.entity.Account;
 import com.service.auth.entity.User;
 
 import org.apache.ibatis.annotations.Mapper;
@@ -34,7 +35,7 @@ public interface UserDao {
      * @param username 用户名
      * @return 账户信息
      */
-    User findByUserName(@Param("userName") String username);
+    Account findByUserName(@Param("username") String username);
 
     void deleteAll();
 

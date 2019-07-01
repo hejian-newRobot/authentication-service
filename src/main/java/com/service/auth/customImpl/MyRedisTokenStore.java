@@ -1,3 +1,4 @@
+/*
 package com.service.auth.customImpl;
 
 import org.springframework.data.redis.connection.RedisConnection;
@@ -404,3 +405,4 @@ public class MyRedisTokenStore implements TokenStore {private static final Strin
         }
     }
 }
+*/

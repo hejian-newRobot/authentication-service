@@ -3,14 +3,23 @@
 <mapper namespace="com.service.auth.dao.UserDao">
 
     <insert id="save" parameterType="com.service.auth.entity.User">
-        INSERT INTO users(userName,passWord,roles) VALUES(#{user.userName},#{user.passWord},#{user.roles})
+        INSERT INTO fsuser(JobId,userName,Psd) VALUES(#{user.jobId},#{user.userName},#{user.psd})
     </insert>
     <delete id="deleteAll">
-        DELETE FROM users
+        DELETE FROM fsuser
     </delete>
 
     <select id="findByUserName" parameterType="string"
-        resultType="com.service.auth.entity.User">
-        SELECT * FROM users WHERE userName=#{userName}
+        resultType="com.service.auth.entity.Account">
+        SELECT * FROM (
+                          SELECT JobId AS username,Psd AS pwd,'ROLE_FSUSER' AS fsRole  FROM dbo.FsUser
+                          WHERE UserTypeIdBySysD=1 AND UserStatus=1
+                          UNION
+                          SELECT JobId AS username,Psd AS pwd,'ROLE_WBUSER' AS fsRole FROM dbo.FsUser
+                          WHERE UserTypeIdBySysD=2 AND UserStatus=1
+                          UNION
+                          SELECT Account AS username,Psd AS pwd,'ROLE_FSQS' AS fsRole FROM dbo.DeliveryMan
+                      ) AS fs
+        WHERE fs.username=#{username}
     </select>
 </mapper>
