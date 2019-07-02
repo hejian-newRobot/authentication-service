@@ -15,7 +15,6 @@ package com.service.auth.dao;
 
 
 import com.service.auth.entity.Account;
-import com.service.auth.entity.User;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -24,6 +23,7 @@ import org.springframework.stereotype.Component;
 /**
  * 账户数据库操作类
  * MongoDB操作接口
+ * @author hejian
  */
 @Component
 @Mapper
@@ -37,7 +37,15 @@ public interface UserDao {
      */
     Account findByUserName(@Param("username") String username);
 
+    /**
+     * 删除所有记录
+     */
     void deleteAll();
 
-    void save(@Param("user") User user);
+    /**
+     * 保存用户信息
+     *
+     * @param user 用户信息
+     */
+    void save(@Param("user") Account user);
 }

@@ -23,6 +23,9 @@ import org.springframework.security.oauth2.provider.token.store.redis.RedisToken
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @author hejian
+ */
 @Configuration
 @EnableAuthorizationServer
 public class AuthorizationServerConfiguration extends AuthorizationServerConfigurerAdapter {
@@ -72,21 +75,16 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
         return converter;
     }
 
-  /*  @Bean // 声明 ClientDetails实现
-    public ClientDetailsService clientDetailsService() {
-        return new JdbcClientDetailsService(dataSource);
-    }*/
-
     /**
      * 采用内存模型
      *
      * @param clients 客户端详情服务配置器
-     * @throws Exception
+     * @throws Exception 配置客户端详情异常
+     * @apiNote clients.withClientDetails(clientDetailsService);通过该方法可以注入自定义的客户端详情服务
      */
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         String finalSecret = "{bcrypt}" + passwordEncoder.encode("android");
-//        clients.withClientDetails(clientDetailsService);
         clients.inMemory()
                 .withClient("android")
                 .scopes("xx")

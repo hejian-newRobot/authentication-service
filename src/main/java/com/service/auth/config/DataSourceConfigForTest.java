@@ -26,7 +26,7 @@ import javax.sql.DataSource;
  * @author hejian
  */
 @Configuration
-@MapperScan(basePackages = "com.service.auth.serviceauth.dao", sqlSessionTemplateRef = "testDBSqlSessionTemplate")
+@MapperScan(basePackages = "com.service.auth.serviceauth.dao", sqlSessionTemplateRef = "testSqlSessionTemplate")
 public class DataSourceConfigForTest {
 
     @Value("${ibatis.mapper.locations.test}")
@@ -52,8 +52,9 @@ public class DataSourceConfigForTest {
         return new DataSourceTransactionManager(dataSource);
     }
 
+    @SuppressWarnings("AlibabaLowerCamelCaseVariableNaming")
     @Bean(name = "testDBSqlSessionTemplate")
-    public SqlSessionTemplate testDBSqlSessionTemplate(
+    public SqlSessionTemplate testSqlSessionTemplate(
             @Qualifier("testDBSqlSessionFactory") SqlSessionFactory sqlSessionFactory) {
         return new SqlSessionTemplate(sqlSessionFactory);
     }

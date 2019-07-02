@@ -1,6 +1,6 @@
 package com.service.auth.config;
 
-import com.service.auth.service.UserDetailService;
+import com.service.auth.service.UserDetailServiceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -14,12 +14,15 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+/**
+ * @author hejian
+ */
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    public SecurityConfiguration(UserDetailService userServiceDetail) {
+    public SecurityConfiguration(UserDetailServiceImpl userServiceDetail) {
         this.userServiceDetail = userServiceDetail;
     }
 
@@ -48,7 +51,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/oauth/**").permitAll();
     }
 
-    private final UserDetailService userServiceDetail;
+    private final UserDetailServiceImpl userServiceDetail;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {

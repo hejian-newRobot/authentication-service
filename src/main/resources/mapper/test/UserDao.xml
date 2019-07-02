@@ -2,7 +2,7 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.service.auth.dao.UserDao">
 
-    <insert id="save" parameterType="com.service.auth.entity.User">
+    <insert id="save" parameterType="com.service.auth.entity.Account">
         INSERT INTO fsuser(JobId,userName,Psd) VALUES(#{user.jobId},#{user.userName},#{user.psd})
     </insert>
     <delete id="deleteAll">

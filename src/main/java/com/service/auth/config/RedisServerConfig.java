@@ -95,7 +95,12 @@ public class RedisServerConfig extends CachingConfigurerSupport {
         };
     }
 
-    //缓存管理器
+    /**
+     * 缓存管理器
+     *
+     * @param connectionFactory redis连接工厂
+     * @return 返回redis缓存管理器
+     */
     @Bean
     public CacheManager cacheManager(RedisConnectionFactory connectionFactory) {
         // 初始化缓存管理器，在这里我们可以缓存的整体过期时间什么的，我这里默认没有配置
@@ -121,10 +126,14 @@ public class RedisServerConfig extends CachingConfigurerSupport {
         RedisTemplate<Object, Object> redisTemplate = new RedisTemplate<>();
         redisTemplate.setConnectionFactory(redisConnectionFactory);
         RedisSerializer stringSerializer = new StringRedisSerializer();
-        redisTemplate.setKeySerializer(stringSerializer); // key序列化
-        redisTemplate.setValueSerializer(jackson2JsonRedisSerializer); // value序列化
-        redisTemplate.setHashKeySerializer(stringSerializer); // Hash key序列化
-        redisTemplate.setHashValueSerializer(jackson2JsonRedisSerializer); // Hash value序列化
+        // key序列化
+        redisTemplate.setKeySerializer(stringSerializer);
+        // value序列化
+        redisTemplate.setValueSerializer(jackson2JsonRedisSerializer);
+        // Hash key序列化
+        redisTemplate.setHashKeySerializer(stringSerializer);
+        // Hash value序列化
+        redisTemplate.setHashValueSerializer(jackson2JsonRedisSerializer);
         redisTemplate.afterPropertiesSet();
         return redisTemplate;
     }

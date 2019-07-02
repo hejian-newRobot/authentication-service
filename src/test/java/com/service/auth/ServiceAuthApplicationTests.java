@@ -1,7 +1,7 @@
 package com.service.auth;
 
 import com.service.auth.dao.UserDao;
-import com.service.auth.entity.User;
+import com.service.auth.entity.Account;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,10 +23,10 @@ public class ServiceAuthApplicationTests {
     @Test
     public void contextLoads() {
 
-        User user = new User();
-        user.setJobId("12222");
-        user.setUserName("何健");
-        user.setPsd(passwordEncoder.encode("123"));
+        Account user = new Account();
+        user.setUsername("12222");
+        user.setFsRole("ROLE_ADMIN");
+        user.setPwd(passwordEncoder.encode("123"));
         userDao.save(user);
     }
 
