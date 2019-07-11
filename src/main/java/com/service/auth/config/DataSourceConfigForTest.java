@@ -38,7 +38,7 @@ public class DataSourceConfigForTest {
         return DataSourceBuilder.create().type(HikariDataSource.class).build();
     }
 
-    @Bean(name = "testDBSqlSessionFactory")
+    @Bean(name = "testDbSqlSessionFactory")
     public SqlSessionFactory fsAppByCateringSqlSessionFactory(@Qualifier("testDB") DataSource dataSource) throws Exception {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);
@@ -52,10 +52,9 @@ public class DataSourceConfigForTest {
         return new DataSourceTransactionManager(dataSource);
     }
 
-    @SuppressWarnings("AlibabaLowerCamelCaseVariableNaming")
-    @Bean(name = "testDBSqlSessionTemplate")
+    @Bean(name = "testSqlSessionTemplate")
     public SqlSessionTemplate testSqlSessionTemplate(
-            @Qualifier("testDBSqlSessionFactory") SqlSessionFactory sqlSessionFactory) {
+            @Qualifier("testDbSqlSessionFactory") SqlSessionFactory sqlSessionFactory) {
         return new SqlSessionTemplate(sqlSessionFactory);
     }
 

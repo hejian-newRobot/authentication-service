@@ -16,7 +16,7 @@ spring:
     timeout: 5000
     database: 0
 ibatis:
-  typeAliasesPackage: com.learn.*.po
+  typeAliasesPackage: com.service.auth.entity
   mapper:
     locations:
       test: classpath:mapper/test/*.xml
