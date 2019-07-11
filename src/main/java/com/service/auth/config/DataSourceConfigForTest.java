@@ -26,7 +26,7 @@ import javax.sql.DataSource;
  * @author hejian
  */
 @Configuration
-@MapperScan(basePackages = "com.service.auth.serviceauth.dao", sqlSessionTemplateRef = "testSqlSessionTemplate")
+@MapperScan(basePackages = "com.service.auth.dao", sqlSessionTemplateRef = "testSqlSessionTemplate")
 public class DataSourceConfigForTest {
 
     @Value("${ibatis.mapper.locations.test}")
