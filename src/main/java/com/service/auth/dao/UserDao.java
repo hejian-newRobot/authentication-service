@@ -1,8 +1,8 @@
 package com.service.auth.dao;
 
 /**
- * 项目名称：SimpleSpringCloudGateway
- * 包名称:com.learn.user.dao
+ * 项目名称：auth-service
+ * 包名称:com.service.auth.dao
  * 类描述：
  * 创建人：hejian
  * 创建时间：2019/6/20 10:12
@@ -22,7 +22,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * 账户数据库操作类
- * MongoDB操作接口
+ *
  * @author hejian
  */
 @Component
