@@ -3,7 +3,7 @@ spring:
     name: service-auth
   ##解决jvm使用的冲突，tomcat中不同的server 注册jmx必须使用不同的jvm
   jmx:
-    default-domain: auth-server
+    default-domain: service-auth
   # redis configuration
   redis:
     host: 127.0.0.1
