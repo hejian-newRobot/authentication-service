@@ -4,39 +4,15 @@ spring:
   ##解决jvm使用的冲突，tomcat中不同的server 注册jmx必须使用不同的jvm
   jmx:
     default-domain: service-auth
-  # redis configuration
-  redis:
-    host: 192.168.3.197
-    lettuce:
-      pool:
-        max-active: 7
-        max-idle: 7
-        max-wait: -1ms
-        min-idle: 2
-      shutdown-timeout: 200
-    password: hejian.1
-    port: 6379
-    timeout: 5000
-    database: 0
+  profiles:
+    active: dev
+## mybatis 配置
 ibatis:
   typeAliasesPackage: com.service.auth.entity
   mapper:
     locations:
       test: classpath:mapper/test/*.xml
-
-datasource:
-  name: fsAppByCatering
-  driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
-  jdbc-url: jdbc:sqlserver://47.111.168.225:8899;DatabaseName=fsAppByCatering
-  username: fstest
-  password: Fsgf@2017
-
+##服务监听的端口号
 server:
   port: 9098
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-
-    #logging.level.org.springframework.security: DEBUG
 
