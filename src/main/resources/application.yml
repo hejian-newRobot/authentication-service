@@ -6,7 +6,7 @@ spring:
     default-domain: service-auth
   # redis configuration
   redis:
-    host: 127.0.0.1
+    host: 192.168.3.197
     lettuce:
       pool:
         max-active: 7
