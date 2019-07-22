@@ -30,21 +30,17 @@ import java.util.concurrent.TimeUnit;
 @EnableAuthorizationServer
 public class AuthorizationServerConfiguration extends AuthorizationServerConfigurerAdapter {
 
-    private final AuthenticationManager authenticationManager;
-
-    private final LettuceConnectionFactory lettuceConnectionFactory;
-
-    private final PasswordEncoder passwordEncoder;
-
     /**
      * 授權的access_token有效期 一天
      */
     private static final int VALIDITY_DAY = 1;
-
     /**
      * token signing key
      */
     private static final String SIGNING_KEY = "hejian";
+    private final AuthenticationManager authenticationManager;
+    private final LettuceConnectionFactory lettuceConnectionFactory;
+    private final PasswordEncoder passwordEncoder;
 
     @Autowired
     public AuthorizationServerConfiguration(@Qualifier("authenticationManagerBean") AuthenticationManager authenticationManager
@@ -71,7 +67,7 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
         KeyStoreKeyFactory keyStoreKeyFactory = new KeyStoreKeyFactory(new ClassPathResource("test-jwt.jks"), "test123".toCharArray());
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
         converter.setKeyPair(keyStoreKeyFactory.getKeyPair("test-jwt"));
-        converter.setSigningKey(SIGNING_KEY);
+//        converter.setSigningKey(SIGNING_KEY);
         return converter;
     }
 
