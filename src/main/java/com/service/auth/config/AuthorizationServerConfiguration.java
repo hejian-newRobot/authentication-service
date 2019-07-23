@@ -34,10 +34,14 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
      * 授權的access_token有效期 一天
      */
     private static final int VALIDITY_DAY = 1;
-    /**
-     * token signing key
+    /*
+      token signing key
+      private static final String SIGNING_KEY = "hejian";
      */
-    private static final String SIGNING_KEY = "hejian";
+
+    /**
+     * 认证管理器
+     */
     private final AuthenticationManager authenticationManager;
     private final LettuceConnectionFactory lettuceConnectionFactory;
     private final PasswordEncoder passwordEncoder;
@@ -64,10 +68,9 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
 
     @Bean
     public JwtAccessTokenConverter jwtAccessTokenConverter() {
-        KeyStoreKeyFactory keyStoreKeyFactory = new KeyStoreKeyFactory(new ClassPathResource("test-jwt.jks"), "test123".toCharArray());
+        KeyStoreKeyFactory keyStoreKeyFactory = new KeyStoreKeyFactory(new ClassPathResource("fs_rsa.jks"), "hejian.1".toCharArray());
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
-        converter.setKeyPair(keyStoreKeyFactory.getKeyPair("test-jwt"));
-//        converter.setSigningKey(SIGNING_KEY);
+        converter.setKeyPair(keyStoreKeyFactory.getKeyPair("fs_rsa"));
         return converter;
     }
 

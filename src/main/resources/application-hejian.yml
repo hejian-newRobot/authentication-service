@@ -1,0 +1,31 @@
+spring:
+  # redis configuration
+  redis:
+    host: localhost
+    lettuce:
+      pool:
+        max-active: 7
+        max-idle: 7
+        max-wait: -1ms
+        min-idle: 2
+      shutdown-timeout: 200
+    password: hejian.1
+    port: 6379
+    timeout: 5000
+    database: 0
+
+##fsAppByCatering库的数据源配置 测试环境
+datasource:
+  name: fsAppByCatering
+  driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jdbc-url: jdbc:sqlserver://47.111.168.225:8899;DatabaseName=fsAppByCatering
+  username: fstest
+  password: Fsgf@2017
+
+##发现服务的默认域
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
