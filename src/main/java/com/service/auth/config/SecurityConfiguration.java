@@ -48,7 +48,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.requestMatchers().anyRequest()
                 .and()
                 .authorizeRequests()
-                .antMatchers("/oauth/**").permitAll();
+                .antMatchers("/oauth/**", "/v2/api-docs").permitAll();
     }
 
     private final UserDetailServiceImpl userServiceDetail;
