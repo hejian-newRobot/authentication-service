@@ -1,7 +1,7 @@
 spring:
   # redis configuration
   redis:
-    host: localhost
+    host: 47.111.168.225
     lettuce:
       pool:
         max-active: 7
@@ -9,7 +9,7 @@ spring:
         max-wait: -1ms
         min-idle: 2
       shutdown-timeout: 200
-    password: hejian.1
+    password: FsMs@2017
     port: 6379
     timeout: 5000
     database: 0
@@ -25,14 +25,14 @@ datasource:
 ##发现服务的默认域
 eureka:
   instance:
-    hostname: localhost
+    hostname: 47.111.168.225
   client:
     service-url:
       defaultZone: http://${eureka.instance.hostname}:8761/eureka/
 ## swagger config
 server:
   gateway:
-    ip: localhost
+    ip: 47.111.168.225
     port: 8888
 swagger:
   config:

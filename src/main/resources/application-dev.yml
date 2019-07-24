@@ -29,3 +29,16 @@ eureka:
   client:
     service-url:
       defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+## swagger config
+server:
+  gateway:
+    ip: 192.168.3.197
+    port: 8888
+swagger:
+  config:
+    enable: true
+    path: fs.service.business.staffservice
+    host: ${server.gateway.ip}:${server.gateway.port}
+  api:
+    title: 认证授权服务 Api文档
+    terms-of-service-url: http://${server.gateway.ip}:${server.gateway.port}/oauth

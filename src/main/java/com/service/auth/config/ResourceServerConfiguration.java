@@ -29,7 +29,7 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
     public void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/registry/**", "/staff/login/**").permitAll()
+                .antMatchers("/registry/**", "/v2/api-docs").permitAll()
                 .antMatchers("/**").authenticated();
     }
 
