@@ -5,7 +5,7 @@ spring:
   jmx:
     default-domain: service-auth
   profiles:
-    active: dev
+    active: test
 ## mybatis 配置
 ibatis:
   typeAliasesPackage: com.service.auth.entity
