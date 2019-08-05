@@ -18,9 +18,9 @@ spring:
 datasource:
   name: fsAppByCatering
   driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
-  jdbc-url: jdbc:sqlserver://47.111.168.225:8899;DatabaseName=fsAppByCatering
-  username: fstest
-  password: Fsgf@2017
+  jdbc-url: jdbc:sqlserver://localhost:8899;DatabaseName=fsAppByCatering
+  username: username
+  password: password
 
 ##发现服务的默认域
 eureka:
